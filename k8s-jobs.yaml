@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: python-hello
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: python
+          image: helloppp-python:1.0
+          imagePullPolicy: IfNotPresent
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: java-hello
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: java
+          image: hello-java:1.0
+          imagePullPolicy: IfNotPresent
